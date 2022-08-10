@@ -58,9 +58,9 @@ fileprivate struct Topic005ContentView: View {
                 ForEach(topics) { topic in
                     GroupBox(topic.title) {
                         VStack(alignment: .leading, spacing: 3) {
-                            ForEach(0..<topic.massages.count, id: \.self) { index in
+                            ForEach(0..<topic.messages.count, id: \.self) { index in
                                 Label {
-                                    Text(topic.massages[index])
+                                    Text(topic.messages[index])
                                 } icon: {
                                     Text("・")
                                 }
@@ -95,14 +95,14 @@ fileprivate struct Topic005LabelStyle: LabelStyle {
 fileprivate struct Topic005: Identifiable {
     let id = UUID()
     let title: String
-    let massages: [LocalizedStringKey]
+    let messages: [LocalizedStringKey]
 }
 
 fileprivate let topics: [Topic005] = [
-    .init(title: "001", massages: ["Stacksと`layputPriority(_:)`を使ってみる"]),
-    .init(title: "002", massages: ["`NavigationLink`を使ってみる", "`List`を使ってみる"]),
-    .init(title: "003", massages: ["`Form`を使ってみる", "`PickerとpickerStyle(_:)`を使ってみる", "`fixedSize(horizontal:vertical:)`を使ってみる"]),
-    .init(title: "004", massages: ["`PrimitiveButtonStyle`を使ってみる"]),
+    .init(title: "001", messages: ["Stacksと`layputPriority(_:)`を使ってみる"]),
+    .init(title: "002", messages: ["`NavigationLink`を使ってみる", "`List`を使ってみる"]),
+    .init(title: "003", messages: ["`Form`を使ってみる", "`PickerとpickerStyle(_:)`を使ってみる", "`fixedSize(horizontal:vertical:)`を使ってみる"]),
+    .init(title: "004", messages: ["`PrimitiveButtonStyle`を使ってみる"]),
 ]
 
 struct Topic005View_Previews: PreviewProvider {
